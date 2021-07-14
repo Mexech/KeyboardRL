@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Key.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25.0601, 24.9095 )
+
+[node name="Key" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 25.0
+margin_bottom = 25.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 1.0
+text = "A"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="Panel"]
+position = Vector2( 25, 25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Area2D"]
+shape = SubResource( 1 )
+
+[connection signal="input_event" from="Panel/Area2D" to="." method="_on_Area2D_input_event"]
