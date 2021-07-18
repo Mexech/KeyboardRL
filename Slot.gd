@@ -1,9 +1,12 @@
 extends Position2D
 
+#export var selected := false
+
 func select():
-	for child in get_tree().get_nodes_in_group("slot"):
+	for child in get_tree().get_nodes_in_group("free_slots"):
 		child.get_child(0).deselect()
-	modulate = Color.webmaroon
+#	selected = true
 
 func deselect():
-	modulate = Color.white
+	pass
+#	selected = false

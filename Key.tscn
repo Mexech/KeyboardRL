@@ -8,6 +8,8 @@ extents = Vector2( 25.0601, 24.9095 )
 [node name="Key" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="pos" type="Position2D" parent="."]
+
 [node name="Panel" type="Panel" parent="."]
 margin_left = -25.0
 margin_top = -25.0

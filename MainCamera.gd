@@ -1,10 +1,9 @@
 extends Camera2D
 
-onready var player = get_node('../Player')
-
 func _ready():
 	pass # Replace with function body.
 
 
 func _process(delta):
-	position.x = player.position.x
+	global_position.x = get_parent().global_position.x
+	global_position.y = get_parent().global_position.y
